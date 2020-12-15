@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { fifaData } from './fifa.js';
 
 // ⚽️ M  V P ⚽️ //
@@ -5,14 +6,16 @@ import { fifaData } from './fifa.js';
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 
+const final2014 = fifaData.filter(game => game.Year===2014 && game.Stage==="Final")[0];
+
 //(a) Home Team name for 2014 world cup final
-
+console.log(final2014['Home Team Name'])
 //(b) Away Team name for 2014 world cup final
-
+console.log(final2014['Away Team Name'])
 //(c) Home Team goals for 2014 world cup final
-
+console.log(final2014['Home Team Goals'])
 //(d) Away Team goals for 2014 world cup final
-
+console.log(final2014['Away Team Goals'])
 //(e) Winner of 2014 world cup final */
 
 
