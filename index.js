@@ -72,7 +72,6 @@ hint: the strings returned need to exactly match the string in step 4.
 function getWinnersByYear(array, callbackYears, callbackWinners) {
     let Years = callbackYears(array);
     let Winners = callbackWinners(array);
-    console.log(Years);
     return array.map((currElement, index) => `In ${Years[index]}, ${Winners[index]} won the world cup!`);
 }
 
@@ -93,8 +92,6 @@ function getAverageGoals(data) {
 }
 
 
-
-
 /// 🥅 STRETCH 🥅 ///
 
 /* 💪💪💪💪💪 Stretch 1: 💪💪💪💪💪 
@@ -103,13 +100,11 @@ Create a function called `getCountryWins` that takes the parameters `data` and `
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
-
-    /* code here */
-
+function getCountryWins(data, team) {
+    return data.filter(game => game.Stage==="Final" && ((game["Home Team Initials"] === team && game["Home Team Goals"] > game["Away Team Goals"]) || (game["Away Team Initials"] === team && game["Away Team Goals"] > game["Home Team Goals"]))).length;
 }
 
-
+console.log(getCountryWins(fifaData, "ENG"));
 
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
 Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
