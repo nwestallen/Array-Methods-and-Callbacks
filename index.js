@@ -69,8 +69,11 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(array, callbackYears, callbackWinners) {
+    let Years = callbackYears(array);
+    let Winners = callbackWinners(array);
+    console.log(Years);
+    return array.map((currElement, index) => `In ${Years[index]}, ${Winners[index]} won the world cup!`);
 }
 
 
